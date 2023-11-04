@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("TEST TEST TEST"),alert("COBA LAGI")})();
