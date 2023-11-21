@@ -1,8 +1,31 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const autoprefixer = require("autoprefixer");
 const packageConfig = require("./package.json");
 const { version } = packageConfig;
+
+const plugins = [
+  new MiniCssExtractPlugin({
+    filename: `css/style.${version}.css`,
+  }),
+];
+
+const generateHtmlPlugin = (name) => {
+  return new HtmlWebpackPlugin({
+    filename: `${name}.html`,
+    template: `./src/pages/${name}.pug`,
+  });
+};
+
+const populateHtmlPlugins = (pages) => {
+  pages.forEach((page) => {
+    plugins.push(generateHtmlPlugin(page));
+  });
+  return plugins;
+};
+
+const populatePlugins = populateHtmlPlugins(["index", "test"]);
 
 module.exports = {
   entry: {
@@ -14,14 +37,7 @@ module.exports = {
     assetModuleFilename: "assets/[name][ext]",
     clean: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/pages/index.pug",
-    }),
-    new MiniCssExtractPlugin({
-      filename: `css/style.${version}.css`,
-    }),
-  ],
+  plugins: populatePlugins,
   devtool: false,
   module: {
     rules: [
@@ -37,7 +53,25 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [autoprefixer],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
