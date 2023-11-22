@@ -1,6 +1,12 @@
-import css from "./style/main.scss";
+// node modules import
+import $ from "jquery";
+import * as bootstrap from "bootstrap";
 
-let coba = "TEST TEST TEST";
+// styles import
+import "./style/main.scss";
 
-console.log(coba);
-alert("COBA LAGI");
+import initMenuToggle from "./components/navbar/navbar";
+
+$(() => {
+  initMenuToggle();
+});
