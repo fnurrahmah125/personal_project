@@ -1,0 +1,26 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+$font-primary: "Poppins", sans-serif;
+
+// colors
+$color-white: #ffffff;
+$color-primary: #121212;
+$color-secondary: #03dac5;
+
+// font weight
+$thin: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+
+// breakpoints
+$bpTablet: 768px;
+$bpDesktop: 1024px;
+$bpDesktopLarge: 1200px;
+
+// functions
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
