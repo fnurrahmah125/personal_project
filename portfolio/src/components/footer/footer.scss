@@ -1,6 +1,6 @@
 .footer {
-  color: #fff;
-  background: #121212;
+  color: $color-white;
+  background: $color-primary;
 
   &-list {
     margin: 0;
@@ -21,7 +21,7 @@
     }
 
     &-link {
-      color: #fff;
+      color: $color-white;
       text-decoration: none;
 
       i {
@@ -44,7 +44,7 @@
           content: "";
           display: block;
           height: 3px;
-          background: #03dac5;
+          background: $color-secondary;
           position: absolute;
           bottom: -5px;
           width: 0%;
