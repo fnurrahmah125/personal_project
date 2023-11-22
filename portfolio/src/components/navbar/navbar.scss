@@ -1,0 +1,165 @@
+.header {
+  color: $color-white;
+  background: $color-primary;
+  position: relative;
+
+  &-container {
+    @media (min-width: $bpTablet) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &-logo .header-logo--desktop {
+    display: none;
+    margin: 0;
+    font-weight: $semi-bold;
+    color: $color-white;
+    text-decoration: none;
+
+    span {
+      font-weight: $thin;
+    }
+
+    @media (min-width: $bpTablet) {
+      display: inline-block;
+    }
+  }
+
+  &-logo img {
+    @media (min-width: $bpTablet) {
+      display: none;
+    }
+  }
+
+  &-nav {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    left: 0%;
+    bottom: calc(-100vh + 130px);
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 700ms;
+
+    &--open {
+      clip-path: circle(250% at top right);
+    }
+
+    @media (min-width: $bpTablet) {
+      position: relative;
+      inset: 0;
+      clip-path: none;
+    }
+  }
+
+  &-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-nav li {
+    display: block;
+
+    @media (min-width: $bpTablet) {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  &-nav a {
+    display: inline-block;
+    width: 100%;
+    line-height: calc((100vh - 130px) / 3);
+    color: $color-white;
+    text-decoration: none;
+    font-size: toRem(32);
+    text-align: center;
+    background: $color-primary;
+    transition: all ease-in-out 0.3s;
+
+    @media (min-width: $bpTablet) {
+      font-size: toRem(16);
+      line-height: normal;
+    }
+
+    &:hover {
+      background: #03dac5;
+
+      @media (min-width: $bpTablet) {
+        background: transparent;
+      }
+    }
+
+    &::before {
+      @media (min-width: $bpTablet) {
+        content: "";
+        display: block;
+        height: 3px;
+        background: $color-secondary;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        transition: all ease-in-out 250ms;
+      }
+    }
+
+    &:hover::before {
+      @media (min-width: $bpTablet) {
+        width: calc(100% - 24px);
+      }
+    }
+
+    &.hover-width-full:hover::before {
+      @media (min-width: $bpTablet) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-toggle {
+    padding: 1em;
+    position: absolute;
+    top: 1em;
+    right: 0;
+    cursor: pointer;
+
+    @media (min-width: $bpTablet) {
+      display: none;
+    }
+  }
+
+  &-hamburger,
+  &-hamburger::before,
+  &-hamburger::after {
+    content: "";
+    display: block;
+    background: $color-white;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+  }
+
+  &-hamburger::before {
+    transform: translateY(-9px);
+  }
+
+  &-hamburger::after {
+    transform: translateY(7px);
+  }
+
+  .open .header-hamburger {
+    transform: rotate(45deg);
+  }
+
+  .open .header-hamburger::before {
+    opacity: 0;
+  }
+
+  .open .header-hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+  }
+}
