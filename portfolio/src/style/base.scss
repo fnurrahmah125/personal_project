@@ -7,6 +7,9 @@ $font-primary: "Poppins", sans-serif;
 $color-white: #ffffff;
 $color-primary: #121212;
 $color-secondary: #03dac5;
+$color-grey-100: #777777;
+$color-grey-200: #616161;
+$color-grey-300: #616161b0;
 
 // font weight
 $light: 200;
@@ -16,6 +19,7 @@ $medium: 500;
 $semi-bold: 600;
 
 // breakpoints
+$bpMobile: 576px;
 $bpTablet: 768px;
 $bpDesktop: 992px;
 $bpDesktopLarge: 1200px;
