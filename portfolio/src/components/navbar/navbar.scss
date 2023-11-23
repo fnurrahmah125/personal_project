@@ -96,10 +96,12 @@
     text-align: center;
     background: $color-primary;
     transition: all ease-in-out 0.3s;
+    border-bottom: 1px solid #616161b0;
 
     @media (min-width: $bpTablet) {
       font-size: toRem(16);
       line-height: normal;
+      border-bottom: 0;
     }
 
     &:hover {
