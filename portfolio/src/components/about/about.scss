@@ -1,10 +1,11 @@
 .about {
   width: 100%;
+  padding-top: 5rem;
 
   &-container {
     padding: 1rem;
     max-width: 42rem;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 
     @media (min-width: $bpDesktop) {
       max-width: 50rem;
@@ -18,7 +19,7 @@
   &-title {
     font-size: 17vw;
     font-weight: $semi-bold;
-    line-height: 0.95;
+    line-height: 1;
     padding: 2rem 0;
 
     @media (min-width: $bpTablet) {
@@ -28,7 +29,7 @@
 
     @media (min-width: $bpDesktop) {
       font-size: toRem(130);
-      line-height: 0.85;
+      line-height: 0.9;
     }
 
     @media (min-width: $bpDesktopLarge) {
@@ -44,13 +45,34 @@
     letter-spacing: 0.5px;
 
     p {
-      color: #777777;
+      color: $color-grey-100;
       margin-bottom: 1rem;
     }
 
     span {
       font-weight: $normal;
       color: $color-white;
+    }
+  }
+
+  &-contact {
+    margin-bottom: 0.5rem;
+
+    i {
+      color: $color-grey-300;
+      font-size: toRem(22);
+      padding-right: 1rem;
+    }
+
+    a {
+      font-size: toRem(14);
+      color: $color-white;
+      text-decoration: none;
+      transition: color ease-in-out 250ms;
+
+      &:hover {
+        color: $color-secondary;
+      }
     }
   }
 }
