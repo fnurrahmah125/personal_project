@@ -1,13 +1,26 @@
 .header {
-  color: $color-white;
-  background: $color-primary;
   position: relative;
+  width: 100%;
 
   &-container {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-bottom: 1px solid #616161b0;
+
     @media (min-width: $bpTablet) {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      max-width: 50rem;
+    }
+
+    @media (min-width: $bpDesktop) {
+      max-width: 60rem;
+    }
+
+    @media (min-width: $bpDesktopLarge) {
+      max-width: 70rem;
     }
   }
 
@@ -19,7 +32,7 @@
     text-decoration: none;
 
     span {
-      font-weight: $thin;
+      font-weight: $light;
     }
 
     @media (min-width: $bpTablet) {
@@ -38,9 +51,10 @@
     top: 100%;
     right: 0%;
     left: 0%;
-    bottom: calc(-100vh + 130px);
+    bottom: calc(-100vh + 72px);
     clip-path: circle(0px at top right);
     transition: clip-path ease-in-out 700ms;
+    z-index: 99;
 
     &--open {
       clip-path: circle(250% at top right);
@@ -57,13 +71,17 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @media (min-width: $bpTablet) {
+      display: flex;
+      gap: 1.5rem;
+    }
   }
 
   &-nav li {
     display: block;
 
     @media (min-width: $bpTablet) {
-      display: inline-block;
       position: relative;
     }
   }
@@ -71,7 +89,7 @@
   &-nav a {
     display: inline-block;
     width: 100%;
-    line-height: calc((100vh - 130px) / 3);
+    line-height: calc((100vh - 72px) / 3);
     color: $color-white;
     text-decoration: none;
     font-size: toRem(32);
@@ -96,7 +114,7 @@
       @media (min-width: $bpTablet) {
         content: "";
         display: block;
-        height: 3px;
+        height: 2px;
         background: $color-secondary;
         position: absolute;
         left: 0;
@@ -107,12 +125,6 @@
     }
 
     &:hover::before {
-      @media (min-width: $bpTablet) {
-        width: calc(100% - 24px);
-      }
-    }
-
-    &.hover-width-full:hover::before {
       @media (min-width: $bpTablet) {
         width: 100%;
       }
