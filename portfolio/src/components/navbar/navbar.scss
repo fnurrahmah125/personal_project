@@ -1,12 +1,14 @@
 .header {
-  position: relative;
+  position: fixed;
   width: 100%;
+  padding: 1rem 1rem 0 1rem;
+  background: $color-primary;
 
   &-container {
     max-width: 42rem;
     margin: 0 auto;
-    padding: 1rem;
-    border-bottom: 1px solid #616161b0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-grey-300;
 
     @media (min-width: $bpTablet) {
       display: flex;
@@ -51,7 +53,8 @@
     top: 100%;
     right: 0%;
     left: 0%;
-    bottom: calc(-100vh + 72px);
+    bottom: calc(-300vh - 72px);
+    background: $color-primary;
     clip-path: circle(0px at top right);
     transition: clip-path ease-in-out 700ms;
     z-index: 99;
@@ -96,7 +99,6 @@
     text-align: center;
     background: $color-primary;
     transition: all ease-in-out 0.3s;
-    border-bottom: 1px solid #616161b0;
 
     @media (min-width: $bpTablet) {
       font-size: toRem(16);
@@ -105,31 +107,20 @@
     }
 
     &:hover {
-      background: #03dac5;
+      background: $color-secondary;
 
       @media (min-width: $bpTablet) {
         background: transparent;
+        color: $color-secondary;
       }
     }
+  }
 
-    &::before {
-      @media (min-width: $bpTablet) {
-        content: "";
-        display: block;
-        height: 2px;
-        background: $color-secondary;
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0;
-        transition: all ease-in-out 250ms;
-      }
-    }
+  &-nav .line {
+    border-bottom: 1px solid $color-grey-200;
 
-    &:hover::before {
-      @media (min-width: $bpTablet) {
-        width: 100%;
-      }
+    @media (min-width: $bpTablet) {
+      border-bottom: 0;
     }
   }
 
