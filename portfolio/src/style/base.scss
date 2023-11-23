@@ -1,5 +1,5 @@
 //fonts
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
 $font-primary: "Poppins", sans-serif;
 
@@ -9,6 +9,7 @@ $color-primary: #121212;
 $color-secondary: #03dac5;
 
 // font weight
+$light: 200;
 $thin: 300;
 $normal: 400;
 $medium: 500;
@@ -16,7 +17,7 @@ $semi-bold: 600;
 
 // breakpoints
 $bpTablet: 768px;
-$bpDesktop: 1024px;
+$bpDesktop: 992px;
 $bpDesktopLarge: 1200px;
 
 // functions
