@@ -1,0 +1,87 @@
+.footer {
+  width: 100%;
+  padding: 1rem;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+    border-top: 1px solid $color-grey-3;
+
+    @media (min-width: $bpTablet) {
+      max-width: 50rem;
+    }
+
+    @media (min-width: $bpDesktop) {
+      max-width: 60rem;
+    }
+
+    @media (min-width: $bpDesktopLarge) {
+      max-width: 70rem;
+    }
+  }
+
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      position: relative;
+      display: inline-block;
+
+      @media (min-width: $bpTablet) {
+        margin-right: 1rem;
+      }
+    }
+
+    &-link {
+      color: $color-white;
+      text-decoration: none;
+
+      i {
+        font-size: rem(22);
+        margin-right: 0.75rem;
+        transition: color ease-in-out 250ms;
+
+        &:hover {
+          color: $color-secondary;
+        }
+
+        @media (min-width: $bpTablet) {
+          display: none;
+        }
+      }
+
+      span {
+        display: none;
+        transition: color ease-in-out 250ms;
+
+        &:hover {
+          color: $color-secondary;
+        }
+
+        @media (min-width: $bpTablet) {
+          display: inline-block;
+          font-size: rem(14);
+          font-weight: $thin;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    margin: 0;
+    font-size: rem(14);
+    font-weight: $thin;
+    letter-spacing: 0.5px;
+  }
+}
+
+footer.menu-open {
+  display: none;
+}

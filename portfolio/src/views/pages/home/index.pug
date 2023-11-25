@@ -1,0 +1,13 @@
+extends Views/layouts/base.pug
+
+block style
+  link(rel='stylesheet' href=require('./styles.scss'))
+
+block script
+  script(src=require('./main.js'))
+
+block content
+  include Views/components/header/header.pug
+  include Views/components/about/about.pug
+  include Views/components/footer/footer.pug
+    
