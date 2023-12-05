@@ -1,0 +1,51 @@
+@use "../base" as *;
+
+.header {
+  width: 100%;
+  padding-bottom: 1rem;
+
+  &-banner {
+    padding: 4rem;
+    background-image: url(img/header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 52%;
+  }
+
+  &-info {
+    width: $container-md;
+    margin: auto;
+
+    @media (min-width: $medium) {
+      padding: 1rem;
+    }
+  }
+
+  &-text {
+    padding-top: 2rem;
+
+    h1 {
+      font-family: $ff-prompt;
+      font-size: rem(22);
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: $color-black;
+
+      @media (min-width: $medium) {
+        font-size: rem(28);
+      }
+    }
+  }
+
+  &-line {
+    border-top: 1px solid $color-border-black;
+    margin-block: 0.35rem 1rem;
+  }
+
+  &-details {
+    font-size: rem(14);
+    letter-spacing: 0.5px;
+    padding: 0.5rem;
+    background: $color-bg-green;
+  }
+}

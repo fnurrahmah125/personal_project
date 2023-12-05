@@ -1,0 +1,19 @@
+@use "../base" as *;
+
+.title-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: $medium) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: $ff-prompt;
+    font-weight: 400;
+    font-size: rem(20);
+    text-transform: lowercase;
+    letter-spacing: 2px;
+  }
+}

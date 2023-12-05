@@ -1,0 +1,94 @@
+@use "../base" as *;
+
+.result-book {
+  width: $container-md;
+  margin-inline: auto;
+  margin-block: 2.5rem;
+
+  @media (min-width: $medium) {
+    padding: 1rem 2rem 1rem 1rem;
+    margin-top: 2rem;
+  }
+
+  &-title {
+    text-align: center;
+    margin-block: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $medium) {
+      text-align: left;
+      flex-direction: row;
+      margin-block: 0 2rem;
+    }
+
+    select {
+      background: transparent;
+      padding: 8px;
+      outline: none;
+
+      &:focus {
+        border: 2px solid $color-black;
+      }
+    }
+  }
+
+  &-cards {
+    display: grid;
+    gap: 12px;
+
+    @media (min-width: $medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-card {
+    width: 100%;
+    height: 200px;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: rem(16);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &[data-type="finished"] {
+      background: $color-card-green;
+    }
+
+    &[data-type="unfinished"] {
+      background: $color-card-light-green;
+    }
+  }
+}
+
+.result-card {
+  &-title {
+    font-size: rem(18);
+    font-weight: 500;
+    padding-block: 0 0.5rem;
+    border-bottom: 5px solid $color-bg-green;
+  }
+
+  &-author {
+    padding-block: 0.75rem 0.5rem;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &-year span {
+    font-weight: 500;
+  }
+
+  &-actions {
+    font-size: rem(14);
+  }
+}

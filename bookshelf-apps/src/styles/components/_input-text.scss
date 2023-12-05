@@ -1,0 +1,43 @@
+@use "../base" as *;
+
+.input-text {
+  position: relative;
+  margin-bottom: 2rem;
+
+  input {
+    width: 100%;
+    color: $color-black;
+    font-size: rem(16);
+    padding: 1rem 0.75rem 0.25rem 0.75rem;
+    border: 1px solid $color-black;
+    border-radius: 2px;
+    background: $color-bg-light-green;
+    outline: none;
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    font-size: rem(16);
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    color: $color-black;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  input:valid ~ label,
+  input:focus ~ label {
+    font-size: rem(14);
+    font-weight: 500;
+    color: $color-black;
+    padding: 0 8px;
+    background: $color-bg-light-green;
+    border: 1px solid $color-black;
+    transform: translateX(10px) translateY(-15px);
+  }
+
+  input:focus {
+    border: 1px solid $color-black;
+  }
+}

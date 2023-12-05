@@ -1,0 +1,11 @@
+@use "../base" as *;
+
+.add-book {
+  margin-top: 1rem;
+
+  @media (min-width: $medium) {
+    padding-inline: 1rem;
+    margin-top: 0;
+    border-right: 1px solid $color-border-black;
+  }
+}

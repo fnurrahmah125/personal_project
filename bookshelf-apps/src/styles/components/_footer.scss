@@ -1,0 +1,11 @@
+@use "../base" as *;
+
+.footer {
+  padding: 0.8rem;
+  background: $color-bg-green;
+
+  &-text {
+    font-size: rem(16);
+    text-align: center;
+  }
+}

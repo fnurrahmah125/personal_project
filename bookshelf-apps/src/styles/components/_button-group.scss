@@ -1,0 +1,50 @@
+@use "../base" as *;
+
+.button-styles {
+  color: $color-white;
+  transition: 0.5s;
+}
+
+.button-group button {
+  border: none;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &.button-finished {
+    background: $color-btn-green;
+    @extend .button-styles;
+
+    &:hover {
+      box-shadow: $bs-green;
+    }
+  }
+
+  &.button-unfinished {
+    background: $color-btn-orange;
+    @extend .button-styles;
+
+    &:hover {
+      box-shadow: $bs-orange;
+    }
+  }
+
+  &.button-edit {
+    background: $color-btn-grey;
+    @extend .button-styles;
+
+    &:hover {
+      box-shadow: $bs-grey;
+    }
+  }
+
+  &.button-delete {
+    background: $color-btn-red;
+    @extend .button-styles;
+
+    &:hover {
+      box-shadow: $bs-red;
+    }
+  }
+}

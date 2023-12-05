@@ -1,0 +1,39 @@
+@use "../base" as *;
+
+.button {
+  font-size: rem(14);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  padding: 10px 15px 10px;
+  outline: 0;
+  border: 1px solid $color-black;
+  position: relative;
+  background-color: $color-bg-light-green;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    background-color: $color-black;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s;
+  }
+
+  &:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+}

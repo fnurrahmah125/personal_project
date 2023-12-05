@@ -1,0 +1,20 @@
+@use "./base" as *;
+
+@use "base";
+@use "components";
+
+body {
+  font-family: $ff-sans;
+  color: $color-black;
+  background: #ecf4d6;
+}
+
+.grid {
+  width: $container-md;
+  margin: auto;
+
+  @media (min-width: $medium) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
