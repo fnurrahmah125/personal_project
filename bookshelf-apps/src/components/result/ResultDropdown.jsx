@@ -1,11 +1,11 @@
-function ResultDropdown() {
+function ResultDropdown({ onFilterBook }) {
   const categories = ["all", "finished", "unfinished"];
 
   return (
-    <select>
+    <select onChange={(e) => onFilterBook(e.target.value)}>
       {categories.map((item, index) => {
         return (
-          <option value={index} key={index}>
+          <option value={item} key={index}>
             {item}
           </option>
         );

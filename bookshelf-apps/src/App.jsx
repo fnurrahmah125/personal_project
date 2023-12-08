@@ -13,7 +13,14 @@ import Swal from "sweetalert2";
 function App() {
   // retrieve data from local storage
   const data = JSON.parse(localStorage.getItem("books"));
-  const bookshelf = data ? data : [];
+
+  // change all display value to visible
+  const newData = data.map((data) =>
+    data ? { ...data, display: "visible" } : data
+  );
+
+  // assign new array
+  const bookshelf = data ? newData : [];
 
   const [books, setBooks] = useState(bookshelf);
   const [searchBook, setSearchBook] = useState("");
@@ -60,15 +67,32 @@ function App() {
     );
   }
 
-  function handleSearchBook(item) {
-    setSearchBook(item);
+  function handleSearchBook(term) {
+    setSearchBook(term);
     setBooks((books) =>
       books.map((book) => {
-        const title = book.title.toLowerCase().includes(item.toLowerCase());
-        if (title) {
-          return { ...book, display: "visible" };
-        } else {
-          return { ...book, display: "hidden" };
+        const title = book.title.toLowerCase().includes(term.toLowerCase());
+        return title
+          ? { ...book, display: "visible" }
+          : { ...book, display: "hidden" };
+      })
+    );
+  }
+
+  function handleFilterBook(term) {
+    setBooks((books) =>
+      books.map((book) => {
+        switch (term) {
+          case "finished":
+            return book.checked
+              ? { ...book, display: "visible" }
+              : { ...book, display: "hidden" };
+          case "unfinished":
+            return !book.checked
+              ? { ...book, display: "visible" }
+              : { ...book, display: "hidden" };
+          default:
+            return { ...book, display: "visible" };
         }
       })
     );
@@ -88,6 +112,7 @@ function App() {
         books={books}
         onDeleteBook={handleDeleteBook}
         onToggleBook={handleToggleBook}
+        onFilterBook={handleFilterBook}
       />
       <FooterSection />
     </div>

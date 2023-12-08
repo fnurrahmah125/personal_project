@@ -2,13 +2,13 @@ import TitleSection from "../title/TitleSection";
 import ResultDropdown from "./ResultDropdown";
 import ResultCard from "./ResultCard";
 
-function ResultSection({ books, onDeleteBook, onToggleBook }) {
+function ResultSection({ books, onDeleteBook, onToggleBook, onFilterBook }) {
   return (
     <div className="result-container">
       <div className="result-book">
         <div className="result-book-title">
           <TitleSection text="list of books" />
-          <ResultDropdown />
+          <ResultDropdown onFilterBook={onFilterBook} />
         </div>
 
         <div className="result-book-cards">
