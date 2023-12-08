@@ -68,6 +68,14 @@
       background: $color-card-light-green;
     }
 
+    &[data-display="visible"] {
+      display: flex;
+    }
+
+    &[data-display="hidden"] {
+      display: none;
+    }
+
     &:hover {
       border-color: $color-black;
     }

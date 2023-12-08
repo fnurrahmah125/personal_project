@@ -3,6 +3,8 @@
 @use "base";
 @use "components";
 
+@import "sweetalert2/src/sweetalert2.scss";
+
 body {
   font-family: $ff-sans;
   color: $color-black;
@@ -13,7 +15,7 @@ body {
   width: $container-md;
   margin: auto;
 
-  @media (min-width: $medium) {
+  @media (min-width: $large) {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }

@@ -16,7 +16,7 @@
     width: $container-md;
     margin: auto;
 
-    @media (min-width: $medium) {
+    @media (min-width: $large) {
       padding: 1rem;
     }
   }
@@ -31,7 +31,7 @@
       letter-spacing: 2px;
       color: $color-black;
 
-      @media (min-width: $medium) {
+      @media (min-width: $large) {
         font-size: rem(28);
       }
     }

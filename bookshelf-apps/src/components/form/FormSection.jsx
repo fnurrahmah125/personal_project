@@ -1,6 +1,6 @@
-function FormSection({ children, id }) {
+function FormSection({ children, id, onSubmit }) {
   return (
-    <form id={id} className="form-input">
+    <form id={id} className="form-input" onSubmit={onSubmit}>
       {children}
     </form>
   );

@@ -2,7 +2,7 @@ import TitleSection from "../title/TitleSection";
 import ResultDropdown from "./ResultDropdown";
 import ResultCard from "./ResultCard";
 
-function ResultSection() {
+function ResultSection({ books, onDeleteBook, onToggleBook }) {
   return (
     <div className="result-container">
       <div className="result-book">
@@ -12,18 +12,19 @@ function ResultSection() {
         </div>
 
         <div className="result-book-cards">
-          <ResultCard
-            title="Negeri 5 Menara"
-            author="Ahmad Fuadi"
-            year="2009"
-            dataType="finished"
-          ></ResultCard>
-          <ResultCard
-            title="The Hunger Games"
-            author="Suzanne Collins"
-            year="2008"
-            dataType="unfinished"
-          ></ResultCard>
+          {books.map((book) => (
+            <ResultCard
+              key={book.id}
+              id={book.id}
+              title={book.title}
+              author={book.author}
+              year={book.year}
+              dataType={book.checked}
+              dataDisplay={book.display}
+              onDeleteBook={onDeleteBook}
+              onToggleBook={onToggleBook}
+            />
+          ))}
         </div>
       </div>
     </div>

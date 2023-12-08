@@ -1,8 +1,21 @@
 import ButtonGroup from "../button/ButtonGroup";
 
-function ResultCard({ title, author, year, dataType }) {
+function ResultCard({
+  id,
+  title,
+  author,
+  year,
+  dataType,
+  dataDisplay,
+  onDeleteBook,
+  onToggleBook,
+}) {
   return (
-    <div className="result-book-card" data-type={dataType}>
+    <div
+      className="result-book-card"
+      data-type={dataType === true ? "finished" : "unfinished"}
+      data-display={dataDisplay}
+    >
       <div className="result-card-info">
         <div className="result-card-title">{title}</div>
         <div className="result-card-author">
@@ -12,7 +25,12 @@ function ResultCard({ title, author, year, dataType }) {
           <span>Year:</span> {year}
         </div>
       </div>
-      <ButtonGroup type={dataType} />
+      <ButtonGroup
+        id={id}
+        type={dataType}
+        onDeleteBook={onDeleteBook}
+        onToggleBook={onToggleBook}
+      />
     </div>
   );
 }

@@ -4,15 +4,80 @@ import InputText from "../input/InputText";
 import InputCheckbox from "../input/InputCheckbox";
 import FormSection from "../form/FormSection";
 
-function AddSection() {
+import { useState } from "react";
+import { generateId } from "../../utils/helpers";
+
+function AddSection({ onAddBook }) {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [year, setYear] = useState("");
+  const [checked, setChecked] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newBook = {
+      title,
+      author,
+      year,
+      checked,
+      display: "visible",
+      id: generateId(),
+    };
+    onAddBook(newBook);
+
+    setTitle("");
+    setAuthor("");
+    setYear("");
+    setChecked(false);
+  }
+
   return (
     <div className="add-book">
       <TitleSection text="input a new book" />
-      <FormSection id="inputBook">
-        <InputText id="inputBookTitle" type="text" text="title" />
-        <InputText id="inputBookAuthor" type="text" text="author" />
-        <InputText id="inputBookYear" type="number" text="year" />
-        <InputCheckbox text="finished reading" />
+      <FormSection id="inputBook" onSubmit={handleSubmit}>
+        <InputText>
+          <input
+            id="inputBookTitle"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <label htmlFor="inputBookTitle">title</label>
+        </InputText>
+        <InputText>
+          <input
+            id="inputBookAuthor"
+            type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            required
+          />
+          <label htmlFor="inputBookAuthor">author</label>
+        </InputText>
+        <InputText>
+          <input
+            id="inputBookYear"
+            type="number"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            required
+          />
+          <label htmlFor="inputBookYear">year</label>
+        </InputText>
+        <InputCheckbox>
+          <label htmlFor="inputBookIsComplete">
+            finished reading
+            <input
+              id="inputBookIsComplete"
+              type="checkbox"
+              checked={checked}
+              onChange={() => setChecked(!checked)}
+            />
+            <span className="input-checkmark"></span>
+          </label>
+        </InputCheckbox>
         <Button id="bookSubmit" text="add book to bookshelf">
           <svg
             xmlns="http://www.w3.org/2000/svg"
