@@ -2,7 +2,16 @@ import TitleSection from "../title/TitleSection";
 import ResultDropdown from "./ResultDropdown";
 import ResultCard from "./ResultCard";
 
-function ResultSection({ books, onDeleteBook, onToggleBook, onFilterBook }) {
+function ResultSection({
+  books,
+  onDeleteBook,
+  onToggleBook,
+  onFilterBook,
+  onEditBook,
+}) {
+  const bookNotFound =
+    books.length !== 0 ? books.find((book) => book.display === "visible") : "";
+
   return (
     <div className="result-container">
       <div className="result-book">
@@ -23,9 +32,22 @@ function ResultSection({ books, onDeleteBook, onToggleBook, onFilterBook }) {
               dataDisplay={book.display}
               onDeleteBook={onDeleteBook}
               onToggleBook={onToggleBook}
+              onEditBook={onEditBook}
             />
           ))}
         </div>
+
+        {books.length === 0 ? (
+          <div className="result-book-empty">the book list is empty</div>
+        ) : (
+          <div></div>
+        )}
+
+        {bookNotFound === undefined ? (
+          <div className="result-book-not-found">book not found</div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

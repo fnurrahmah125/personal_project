@@ -20,3 +20,22 @@ body {
     grid-template-columns: 2fr 1fr;
   }
 }
+
+.popup-title {
+  font-size: rem(20);
+  font-weight: 500;
+}
+
+.swal-input {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  input {
+    display: block;
+    margin: 0 auto;
+  }
+}

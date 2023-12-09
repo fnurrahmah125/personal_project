@@ -9,6 +9,7 @@ function ResultCard({
   dataDisplay,
   onDeleteBook,
   onToggleBook,
+  onEditBook,
 }) {
   return (
     <div
@@ -30,6 +31,7 @@ function ResultCard({
         type={dataType}
         onDeleteBook={onDeleteBook}
         onToggleBook={onToggleBook}
+        onEditBook={onEditBook}
       />
     </div>
   );
