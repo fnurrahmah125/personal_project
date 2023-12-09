@@ -8,18 +8,11 @@ import ResultSection from "./components/result/ResultSection";
 import FooterSection from "./components/footer/FooterSection";
 
 import { useEffect, useState } from "react";
+import { data } from "./utils/data";
 import Swal from "sweetalert2";
 import $ from "jquery";
 
-let dummyData;
-
-$.getJSON("src/utils/data.json")
-  .done(function (res) {
-    dummyData = res;
-  })
-  .fail(function () {
-    console.log("An error has occurred.");
-  });
+const dummyData = data;
 
 function App() {
   // retrieve data from local storage
