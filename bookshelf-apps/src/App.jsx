@@ -32,6 +32,20 @@ function App() {
   }, [books]);
 
   function handleAddBook(book) {
+    const title = book.title.toLowerCase();
+    const findTitle = books.find((book) => book.title.toLowerCase() === title);
+
+    if (findTitle !== undefined) {
+      Swal.fire({
+        title: "Oops...",
+        text: "The book already exist.",
+        icon: "error",
+        showConfirmButton: true,
+        confirmButtonColor: "#068fff",
+      });
+      return;
+    }
+
     setBooks([...books, book]);
 
     Swal.fire({
@@ -106,10 +120,19 @@ function App() {
     );
   }
 
-  function handleDummyData(data) {
-    if (data) {
-      setBooks(books.concat(dummyData));
+  function handleDummyData(val) {
+    const newDummyData = [];
+
+    if (val) {
+      dummyData.forEach((data) => {
+        const findId = books.find((book) => book.id === data.id);
+        if (findId === undefined) {
+          newDummyData.push(data);
+        }
+      });
     }
+
+    setBooks(books.concat(newDummyData));
   }
 
   function handleEditData(id) {

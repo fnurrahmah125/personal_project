@@ -39,6 +39,15 @@ const data = [
     display: "visible",
     id: 1234567894,
   },
+  {
+    title:
+      "The Tower Menagerie: The Amazing 600-Year History of the Royal Collection of Wild and Ferocious Beasts Kept at the Tower of London",
+    author: "Roger Hahn",
+    year: "2004",
+    checked: false,
+    display: "visible",
+    id: 1234567895,
+  },
 ];
 
 export { data };
