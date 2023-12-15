@@ -5,6 +5,7 @@ import HeaderSection from "./components/header/HeaderSection";
 import AddSection from "./components/add/AddSection";
 import SearchSection from "./components/search/SearchSection";
 import ResultSection from "./components/result/ResultSection";
+import ClearSection from "./components/clear/ClearSection";
 import FooterSection from "./components/footer/FooterSection";
 
 import { useEffect, useState } from "react";
@@ -195,6 +196,30 @@ function App() {
     })();
   }
 
+  function handleClearBooks() {
+    Swal.fire({
+      title: "Are you sure you want to delete all the books?",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      confirmButtonColor: "#068fff",
+      cancelButtonColor: "#dc3545",
+      customClass: {
+        title: "popup-title",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setBooks([]);
+        Swal.fire({
+          title: "Success",
+          text: "All of the books have been deleted!",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+  }
+
   return (
     <div className="app">
       <HeaderSection books={books} onAddDummy={handleDummyData} />
@@ -212,6 +237,7 @@ function App() {
         onFilterBook={handleFilterBook}
         onEditBook={handleEditData}
       />
+      <ClearSection onClearBooks={handleClearBooks} />
       <FooterSection />
     </div>
   );

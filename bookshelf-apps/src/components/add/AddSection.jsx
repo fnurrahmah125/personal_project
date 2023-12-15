@@ -78,7 +78,7 @@ function AddSection({ onAddBook }) {
             <span className="input-checkmark"></span>
           </label>
         </InputCheckbox>
-        <Button id="bookSubmit" text="add book to bookshelf">
+        <Button id="bookSubmit" text="add book to bookshelf" type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="18"
