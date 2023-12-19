@@ -1,0 +1,63 @@
+// import tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark-mode {
+    @apply bg-slate-900;
+  }
+
+  .overlay-open {
+    @apply overflow-hidden;
+  }
+
+  .search-bar-container {
+    @apply max-w-screen-lg 2xl:max-w-screen-xl m-auto py-4 px-4 md:px-6 lg:py-6 after:content-[''] after:border-b after:border-slate-200 after:absolute after:w-full after:left-0  after:right-0 after:top-20 lg:after:top-[90px] flex gap-3 dark:after:border-slate-700/70;
+  }
+
+  [data-display="visible"] {
+    @apply flex;
+  }
+
+  [data-display="invisible"] {
+    @apply hidden;
+  }
+}
+
+// import fonts & icomoon
+@import "./fonts.scss";
+@import "./icomoon.scss";
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.add-btn {
+  --b: 4px; /* the thickness */
+  width: 45px; /* the size */
+  aspect-ratio: 1;
+  border: 10px solid #334155; /* the outer space */
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #334155 90deg,
+      #fff 0
+    )
+    calc(100% + var(--b) / 2) calc(100% + var(--b) / 2) / calc(50% + var(--b))
+    calc(50% + var(--b));
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.tooltip {
+  .tooltip-text {
+    visibility: hidden;
+  }
+
+  &:hover .tooltip-text {
+    @media (min-width: 768px) {
+      visibility: visible;
+    }
+  }
+}
