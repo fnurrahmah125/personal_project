@@ -2,7 +2,7 @@ import { useState } from "react";
 import { generateId, generateDate } from "../../utils/helper";
 
 import FormOverlay from "./FormOverlay";
-import FormContainer from "./FormContainer";
+import FormWrapper from "./FormWrapper";
 import FormTitle from "./FormTitle";
 
 function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
@@ -50,9 +50,9 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
     return (
       <>
         <FormOverlay onHandleOverlay={onHandleOverlay} />
-        <FormContainer>
+        <FormWrapper>
           <FormTitle title="Create a note" />
-          <form onSubmit={handleSubmit}>
+          <form id="form-add" onSubmit={handleSubmit}>
             <p className="text-end">
               <span className="text-sm text-left inline-block px-4 py-2 my-4 font-medium bg-sky-100 text-blue-600 rounded-md">
                 Characters left: {maxChar}
@@ -92,7 +92,7 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
               </button>
             </div>
           </form>
-        </FormContainer>
+        </FormWrapper>
       </>
     );
   }

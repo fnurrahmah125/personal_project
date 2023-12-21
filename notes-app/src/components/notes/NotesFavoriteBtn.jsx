@@ -1,6 +1,7 @@
 function NotesFavoriteBtn({ id, favorite, onFavoriteNote }) {
   return (
     <button
+      id="note-favorite-btn"
       className="tooltip cursor-pointer relative"
       onClick={() => onFavoriteNote(id)}
     >

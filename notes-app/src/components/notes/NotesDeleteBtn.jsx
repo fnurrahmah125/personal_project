@@ -1,6 +1,7 @@
 function NotesDeleteBtn({ id, onDeleteNote }) {
   return (
     <button
+      id="note-delete-btn"
       className="tooltip cursor-pointer relative"
       onClick={() => onDeleteNote(id)}
     >

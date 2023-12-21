@@ -12,7 +12,10 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
   );
 
   return (
-    <div className="min-h-screen max-w-screen-lg 2xl:max-w-screen-xl m-auto px-4 md:px-8 mb-7">
+    <div
+      id="notes"
+      className="min-h-screen max-w-screen-lg 2xl:max-w-screen-xl m-auto px-4 md:px-8 mb-7"
+    >
       <NotesTitle />
       <NotesSection title="Favorites" data={favoritesNotes}>
         <NotesWrapper>

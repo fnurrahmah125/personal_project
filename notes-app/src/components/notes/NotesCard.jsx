@@ -15,6 +15,7 @@ function NotesCard({
 }) {
   return (
     <div
+      id="note-card"
       className="bg-[#EBBD71] h-80 rounded-md p-4 lg:px-5 flex-col justify-between text-slate-700"
       data-display={display}
     >

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { generateDate } from "../../utils/helper";
 
 import FormOverlay from "./FormOverlay";
-import FormContainer from "./FormContainer";
+import FormWrapper from "./FormWrapper";
 import FormTitle from "./FormTitle";
 
 function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
@@ -73,9 +73,9 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
     return (
       <>
         <FormOverlay onHandleOverlay={onHandleOverlay} />
-        <FormContainer>
+        <FormWrapper>
           <FormTitle title="Update note" />
-          <form onSubmit={handleSubmit}>
+          <form id="form-edit" onSubmit={handleSubmit}>
             <p className="text-end">
               <span className="text-sm text-left inline-block px-4 py-2 my-4 font-medium bg-sky-100 text-blue-600 rounded-md">
                 Characters left: {values.maxChar}
@@ -106,7 +106,7 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
               </button>
             </div>
           </form>
-        </FormContainer>
+        </FormWrapper>
       </>
     );
   }

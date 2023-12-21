@@ -1,6 +1,7 @@
 function NotesEditBtn({ id, onEditNote }) {
   return (
     <button
+      id="note-edit-btn"
       className="tooltip cursor-pointer relative"
       onClick={() => onEditNote(id)}
     >
