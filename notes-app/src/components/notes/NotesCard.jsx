@@ -29,8 +29,10 @@ function NotesCard({
             onFavoriteNote={onFavoriteNote}
           />
         </div>
-        <div className="text-2xl mb-2 font-medium overflow-hidden">{title}</div>
-        <div className="font-light max-h-36 text-sm tracking-wide leading-relaxed overflow-y-scroll ">
+        <div className="note-title text-2xl mb-2 font-medium overflow-hidden">
+          {title}
+        </div>
+        <div className="font-light h-[174px] text-sm tracking-wide leading-relaxed overflow-y-scroll ">
           {text}
         </div>
       </div>
