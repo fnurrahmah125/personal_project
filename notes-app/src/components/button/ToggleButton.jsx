@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import $ from "jquery";
-
 import sun from "../../assets/sun.png";
 import moon from "../../assets/moon.png";
+
+import { useState, useEffect } from "react";
+import $ from "jquery";
 
 function ToggleButton() {
   const [darkMode, setDarkMode] = useState(
@@ -27,13 +27,14 @@ function ToggleButton() {
 
   return (
     <button
+      id="dark-mode-btn"
       className="h-10 w-10 flex-none p-2 rounded-full ring-1 ring-slate-200 hover:cursor-pointer hover:ring-slate-300 dark:bg-slate-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={handleDarkMode}
     >
       {!darkMode ? (
-        <img src={sun} alt="sun icon" width={30} />
+        <img id="light-btn" src={sun} alt="sun icon" width={30} />
       ) : (
-        <img src={moon} alt="sun icon" width={30} />
+        <img id="dark-btn" src={moon} alt="moon icon" width={30} />
       )}
     </button>
   );

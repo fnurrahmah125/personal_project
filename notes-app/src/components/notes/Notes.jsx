@@ -3,7 +3,7 @@ import NotesWrapper from "./NotesWrapper";
 import NotesCard from "./NotesCard";
 import NotesSection from "./NotesSection";
 
-function Notes({ notes, onHandleDelete, onHandleFavorite }) {
+function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
   const favoritesNotes = notes.filter(
     (note) => (note.favorite === true) & (note.display === "visible")
   );
@@ -25,8 +25,9 @@ function Notes({ notes, onHandleDelete, onHandleFavorite }) {
               createdAt={note.createdAt}
               favorite={note.favorite}
               display={note.display}
-              onHandleDelete={onHandleDelete}
-              onHandleFavorite={onHandleFavorite}
+              onDeleteNote={onDeleteNote}
+              onFavoriteNote={onFavoriteNote}
+              onEditNote={onEditNote}
             />
           ))}
         </NotesWrapper>
@@ -42,8 +43,9 @@ function Notes({ notes, onHandleDelete, onHandleFavorite }) {
               createdAt={note.createdAt}
               favorite={note.favorite}
               display={note.display}
-              onHandleDelete={onHandleDelete}
-              onHandleFavorite={onHandleFavorite}
+              onDeleteNote={onDeleteNote}
+              onFavoriteNote={onFavoriteNote}
+              onEditNote={onEditNote}
             />
           ))}
         </NotesWrapper>

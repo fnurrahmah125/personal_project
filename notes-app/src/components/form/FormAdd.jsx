@@ -1,26 +1,14 @@
 import { useState } from "react";
-import FormOverlay from "./FormOverlay";
+import { generateId, generateDate } from "../../utils/helper";
 
-function Form({ formOpen, onHandleOverlay, onAddNote }) {
+import FormOverlay from "./FormOverlay";
+import FormContainer from "./FormContainer";
+import FormTitle from "./FormTitle";
+
+function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [maxChar, setMaxChar] = useState(50);
-
-  function generateId() {
-    return +new Date();
-  }
-
-  function generateDate() {
-    const date = +new Date();
-    const options = {
-      weekday: "short",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    };
-
-    return new Date(date).toLocaleDateString("en-GB", options);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,32 +21,37 @@ function Form({ formOpen, onHandleOverlay, onAddNote }) {
       createdAt: generateDate(),
       display: "visible",
     };
+
     onAddNote(newNote);
 
     setTitle("");
     setText("");
     setMaxChar(50);
+
+    onHandleOverlay();
   }
 
   function handleTitle(e) {
-    setTitle(e.target.value);
-
-    const value = e.target.value;
+    const inputValue = e.target.value;
     const countLimit = 50;
 
-    if (value.length <= countLimit) {
-      setMaxChar(countLimit - value.length);
+    setTitle(inputValue);
+
+    if (inputValue.length <= countLimit) {
+      setMaxChar(countLimit - inputValue.length);
     }
   }
 
-  if (formOpen) {
+  function handleText(e) {
+    setText(e.target.value);
+  }
+
+  if (isOpen) {
     return (
       <>
         <FormOverlay onHandleOverlay={onHandleOverlay} />
-        <div className="fixed top-1/2 left-1/2 z-30 -translate-x-2/4 -translate-y-2/4 bg-white text-slate-700 rounded-md p-4 w-11/12 md:w-9/12 lg:w-6/12 xl:w-5/12 lg:p-6 dark:bg-slate-900">
-          <h2 className="text-2xl font-medium pb-2 border-b border-slate-200 dark:text-white dark:border-slate-700/70">
-            Create a note
-          </h2>
+        <FormContainer>
+          <FormTitle title="Create a note" />
           <form onSubmit={handleSubmit}>
             <p className="text-end">
               <span className="text-sm text-left inline-block px-4 py-2 my-4 font-medium bg-sky-100 text-blue-600 rounded-md">
@@ -79,7 +72,7 @@ function Form({ formOpen, onHandleOverlay, onAddNote }) {
               rows="10"
               placeholder="Enter your text here..."
               value={text}
-              onChange={(e) => setText(e.target.value)}
+              onChange={(e) => handleText(e)}
               required
               className="block bg-slate-50 w-full px-4 py-3 mb-6 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             ></textarea>
@@ -99,10 +92,10 @@ function Form({ formOpen, onHandleOverlay, onAddNote }) {
               </button>
             </div>
           </form>
-        </div>
+        </FormContainer>
       </>
     );
   }
 }
 
-export default Form;
+export default FormAdd;

@@ -1,46 +1,50 @@
 import "./styles/index.scss";
 
+import SearchContainer from "./components/search/SearchContainer";
 import SearchBar from "./components/search/SearchBar";
-import ToggleButton from "./components/toggle/ToggleButton";
-
+import ToggleButton from "./components/button/ToggleButton";
 import AddButton from "./components/button/AddButton";
-import Form from "./components/form/Form";
+import FormAdd from "./components/form/FormAdd";
+import FormEdit from "./components/form/FormEdit";
 import Notes from "./components/notes/Notes";
 import Footer from "./components/footer/Footer";
+
 import { useState, useEffect } from "react";
 import $ from "jquery";
 
 function App() {
-  const data = JSON.parse(localStorage.getItem("notes"));
-  const notesData = data
-    ? data.map((data) => (data ? { ...data, display: "visible" } : data))
+  const getData = JSON.parse(localStorage.getItem("notes"));
+  const notesData = getData
+    ? getData.map((item) => (item ? { ...item, display: "visible" } : item))
     : [];
 
   const [notes, setNotes] = useState(notesData);
-  const [formOpen, setFormOpen] = useState(false);
   const [searchNote, setSearchNote] = useState("");
+  const [selectedNote, setSelectedNote] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   useEffect(() => {
-    formOpen
+    isOpen || isEditing
       ? $("body").addClass("overlay-open")
       : $("body").removeClass("overlay-open");
   });
 
   function handleForm() {
-    setFormOpen(true);
+    setIsOpen(true);
   }
 
   function handleOverlay() {
-    setFormOpen(false);
+    setIsOpen(false);
+    setIsEditing(false);
   }
 
   function handleAddNote(note) {
     setNotes([...notes, note]);
-    setFormOpen(false);
   }
 
   function handleDeleteNote(id) {
@@ -74,26 +78,53 @@ function App() {
     );
   }
 
+  function handleEditNote(id) {
+    const currentData = notes.find((note) => note.id === id);
+    setSelectedNote(currentData);
+    setIsEditing(true);
+  }
+
+  function handleUpdateNote(data) {
+    setNotes((notes) =>
+      notes.map((note) =>
+        note.id === data.id
+          ? {
+              ...note,
+              title: data.title,
+              text: data.text,
+              createdAt: data.createdAt,
+            }
+          : note
+      )
+    );
+  }
+
   return (
     <>
-      <div className="search-bar-container">
+      <SearchContainer>
         <SearchBar
           searchNote={searchNote}
-          onHandleSearch={handleSearchNote}
-          onHandleClear={handleClearSearch}
+          onSearchNote={handleSearchNote}
+          onClearSearch={handleClearSearch}
         />
         <ToggleButton />
-      </div>
-
-      <Form
-        formOpen={formOpen}
+      </SearchContainer>
+      <FormAdd
+        isOpen={isOpen}
         onHandleOverlay={handleOverlay}
         onAddNote={handleAddNote}
       />
+      <FormEdit
+        isEditing={isEditing}
+        selectedNote={selectedNote}
+        onHandleOverlay={handleOverlay}
+        onUpdateNote={handleUpdateNote}
+      />
       <Notes
         notes={notes}
-        onHandleDelete={handleDeleteNote}
-        onHandleFavorite={handleFavoriteNote}
+        onDeleteNote={handleDeleteNote}
+        onFavoriteNote={handleFavoriteNote}
+        onEditNote={handleEditNote}
       />
       <AddButton onHandleForm={handleForm} />
       <Footer />

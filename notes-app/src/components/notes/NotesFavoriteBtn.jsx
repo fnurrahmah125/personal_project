@@ -1,8 +1,8 @@
-function NotesFavoriteBtn({ id, favorite, onHandleFavorite }) {
+function NotesFavoriteBtn({ id, favorite, onFavoriteNote }) {
   return (
     <button
       className="tooltip cursor-pointer relative"
-      onClick={() => onHandleFavorite(id)}
+      onClick={() => onFavoriteNote(id)}
     >
       {favorite ? (
         <span className="icon-star-full text-2xl"></span>
