@@ -1,0 +1,20 @@
+mixin card(spec)
+    - spec = spec || {}
+    - spec.title = spec.title || ""
+    - spec.desc = spec.desc || ""
+    - spec.source = spec.source || ""
+    - spec.live = spec.live || ""
+
+    .project-card 
+        .project-card-title= spec.title 
+        .project-card-tech
+            each val in spec.tech
+                span= val
+        .project-card-desc= spec.desc
+        .project-card-links     
+            a.code(href=spec.source target="_blank")
+                i(class="fa-solid fa-link")
+                span View Source
+            a.live(href=spec.live target="_blank")
+                i(class="fa-solid fa-arrow-up-right-from-square")
+                span Live Demo

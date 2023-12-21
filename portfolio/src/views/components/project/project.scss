@@ -22,16 +22,15 @@
 
   &-cards {
     display: grid;
+    gap: 1.5rem;
 
     @media (min-width: $bpDesktop) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
     }
   }
 
   &-card {
     padding: 2rem;
-    margin-block: 1rem;
     background: #202020;
     border-radius: 5px;
     border: 1px solid;

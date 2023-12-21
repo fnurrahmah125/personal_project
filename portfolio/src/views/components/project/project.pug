@@ -1,21 +1,21 @@
+include projectCard.pug
+
 .project#project
     .project-container
         h2.project-title Projects
-        .project-cards 
-            .project-card 
-                .project-card-title Bookshelf App
-                .project-card-tech
-                    span React
-                    span SCSS
-                    span Jquery
-                .project-card-desc A simple web app allows users to easily catalog their books by inputting details such as title, author, and year. This app is built with React, and user data is stored in the browser's local storage.
-                .project-card-links     
-                    a.code(href="https://github.com/fnurrahmah125/personal_project/tree/main/bookshelf-apps" target="_blank")
-                        i(class="fa-solid fa-link")
-                        span View Source
-                    a.live(href="https://fnurrahmah-bookshelf-app.vercel.app/" target="_blank")
-                        i(class="fa-solid fa-arrow-up-right-from-square")
-                        span Live Demo
-            
-            
+        .project-cards
+            +card({
+                "title": "Bookshelf App",
+                "tech": ["React", "SCSS", "Jquery"],
+                "desc": "A simple web app allows users to easily catalog their books by inputting details such as title, author, and year. This app is built with React, and user data is stored in the browser's local storage.",
+                "source": "https://github.com/fnurrahmah125/personal_project/tree/main/bookshelf-apps",
+                "live": "https://fnurrahmah-bookshelf-app.vercel.app/"
+            }) 
+            +card({
+                "title": "Notes App",
+                "tech": ["React", "Tailwind", "Jquery"],
+                "desc": "A simple notes app built with React.js. The user data is stored in the browser's local storage. This web app allows you to create and edit notes.",
+                "source": "https://github.com/fnurrahmah125/personal_project/tree/main/notes-app",
+                "live": "https://fnurrahmah-notes-app.vercel.app/"
+            }) 
                 
