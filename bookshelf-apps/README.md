@@ -4,7 +4,8 @@ A simple web app allows users to easily catalog their books by inputting details
 
 Live Demo: [https://fnurrahmah-bookshelf-app.vercel.app/](https://fnurrahmah-bookshelf-app.vercel.app/)
 
-![image 1 (1)](https://github.com/fnurrahmah125/recreate_bookshelf-app/assets/54012198/2d029154-e560-4194-b095-a686b57d62ac)
+![image](https://github.com/fnurrahmah125/personal_project/assets/54012198/b8fa7535-6f1e-4a6b-8cd9-71216fced0a1)
+
 
 ![image](https://github.com/fnurrahmah125/personal_project/assets/54012198/52ae10a9-807d-4d99-97d8-c8a3b78c65b2)
 ![image](https://github.com/fnurrahmah125/personal_project/assets/54012198/11fd4007-c5b8-4450-a5d4-cf0da7bb538a)
