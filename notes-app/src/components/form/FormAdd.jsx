@@ -85,7 +85,7 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
               required
               className="block bg-slate-50 w-full px-4 py-3 mb-4 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             ></textarea>
-            <div className="mb-4 py-2 font-regular text-slate-700 dark:text-white">
+            <div className="mb-4 py-2 font-regular text-sm md:text-base text-slate-700 dark:text-white">
               <span>Background options:</span>
               {colors.map((color, index) => (
                 <FormRadioBtn

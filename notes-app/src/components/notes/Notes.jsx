@@ -14,7 +14,7 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
   return (
     <div
       id="notes"
-      className="min-h-screen max-w-screen-lg 2xl:max-w-screen-xl m-auto px-4 md:px-8 mb-7"
+      className="min-h-screen max-w-screen-lg 2xl:max-w-screen-xl m-auto px-4 md:px-8 mb-7 overflow-hidden"
     >
       <NotesTitle />
       <NotesSection title="Favorites" data={favoritesNotes}>
