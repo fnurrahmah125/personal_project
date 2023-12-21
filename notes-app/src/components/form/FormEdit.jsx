@@ -4,6 +4,7 @@ import { generateDate } from "../../utils/helper";
 import FormOverlay from "./FormOverlay";
 import FormWrapper from "./FormWrapper";
 import FormTitle from "./FormTitle";
+import FormRadioBtn from "./FormRadioBtn";
 
 function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
   function countLength(text) {
@@ -12,11 +13,14 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
     }
   }
 
+  const colors = ["yellow", "orange", "purple", "blue", "green"];
+
   const [values, setValues] = useState({
     id: 0,
     title: "",
     text: "",
     maxChar: 0,
+    color: "yellow",
   });
 
   const selectedData = (selectedNote) => {
@@ -26,6 +30,7 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
           id: selectedNote.id,
           title: selectedNote.title,
           text: selectedNote.text,
+          color: selectedNote.color,
           maxChar: countLength(selectedNote.title),
         }
       : [];
@@ -52,16 +57,23 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
     setValues({ ...values, text: e.target.value });
   }
 
+  function handleColor(e) {
+    setValues({ ...values, color: e.target.value });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
     const isUpdate =
-      values.title !== selectedNote.title || values.text !== selectedNote.text;
+      values.title !== selectedNote.title ||
+      values.text !== selectedNote.text ||
+      values.color !== selectedNote.color;
 
     const newNote = {
       id: selectedNote.id,
       title: values.title,
       text: values.text,
+      color: values.color,
       createdAt: isUpdate ? generateDate() : selectedNote.createdAt,
     };
 
@@ -97,6 +109,17 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
               onChange={(e) => handleText(e)}
               className="block bg-slate-50 w-full px-4 py-3 mb-6 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             ></textarea>
+            <div className="mb-4 py-2 font-regular text-slate-700 dark:text-white">
+              <span>Background options:</span>
+              {colors.map((color, index) => (
+                <FormRadioBtn
+                  key={index}
+                  color={color}
+                  checked={values.color === color ? true : false}
+                  onHandleColor={handleColor}
+                />
+              ))}
+            </div>
             <div className="pt-4 lg:pt-6 border-t border-slate-200 flex justify-end gap-2.5 dark:border-slate-700/70">
               <button
                 type="submit"

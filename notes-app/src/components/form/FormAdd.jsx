@@ -4,11 +4,15 @@ import { generateId, generateDate } from "../../utils/helper";
 import FormOverlay from "./FormOverlay";
 import FormWrapper from "./FormWrapper";
 import FormTitle from "./FormTitle";
+import FormRadioBtn from "./FormRadioBtn";
 
 function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [maxChar, setMaxChar] = useState(50);
+  const [color, setColor] = useState("yellow");
+
+  const colors = ["yellow", "orange", "purple", "blue", "green"];
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,6 +20,7 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
     const newNote = {
       title,
       text,
+      color,
       favorite: false,
       id: generateId(),
       createdAt: generateDate(),
@@ -46,6 +51,10 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
     setText(e.target.value);
   }
 
+  function handleColor(e) {
+    setColor(e.target.value);
+  }
+
   if (isOpen) {
     return (
       <>
@@ -74,8 +83,18 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
               value={text}
               onChange={(e) => handleText(e)}
               required
-              className="block bg-slate-50 w-full px-4 py-3 mb-6 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
+              className="block bg-slate-50 w-full px-4 py-3 mb-4 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             ></textarea>
+            <div className="mb-4 py-2 font-regular text-slate-700 dark:text-white">
+              <span>Background options:</span>
+              {colors.map((color, index) => (
+                <FormRadioBtn
+                  key={index}
+                  color={color}
+                  onHandleColor={handleColor}
+                />
+              ))}
+            </div>
             <div className="pt-4 lg:pt-6 border-t border-slate-200 flex justify-end gap-2.5 dark:border-slate-700/70">
               <button
                 type="submit"

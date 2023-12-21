@@ -92,6 +92,7 @@ function App() {
               ...note,
               title: data.title,
               text: data.text,
+              color: data.color,
               createdAt: data.createdAt,
             }
           : note

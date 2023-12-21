@@ -19,6 +19,26 @@
   [data-display="invisible"] {
     @apply hidden;
   }
+
+  [data-color="yellow"] {
+    @apply bg-[#EBBD71];
+  }
+
+  [data-color="orange"] {
+    @apply bg-[#E48E71];
+  }
+
+  [data-color="purple"] {
+    @apply bg-[#A180E6];
+  }
+
+  [data-color="blue"] {
+    @apply bg-[#4CCDEE];
+  }
+
+  [data-color="green"] {
+    @apply bg-[#D8E48F];
+  }
 }
 
 // import fonts & icomoon
@@ -56,4 +76,12 @@ body {
       visibility: visible;
     }
   }
+}
+
+.checkmark-circle::after {
+  display: none;
+}
+
+.checkmark-wrapper input:checked ~ .checkmark-circle::after {
+  display: block;
 }

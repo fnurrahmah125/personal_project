@@ -25,6 +25,7 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
               id={note.id}
               title={note.title}
               text={note.text}
+              color={note.color}
               createdAt={note.createdAt}
               favorite={note.favorite}
               display={note.display}
@@ -43,6 +44,7 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
               id={note.id}
               title={note.title}
               text={note.text}
+              color={note.color}
               createdAt={note.createdAt}
               favorite={note.favorite}
               display={note.display}

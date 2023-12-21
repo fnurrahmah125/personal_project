@@ -6,6 +6,7 @@ function NotesCard({
   id,
   title,
   text,
+  color,
   createdAt,
   favorite,
   display,
@@ -16,8 +17,9 @@ function NotesCard({
   return (
     <div
       id="note-card"
-      className="bg-[#EBBD71] h-80 rounded-md p-4 lg:px-5 flex-col justify-between text-slate-700"
+      className="h-80 rounded-md p-4 lg:px-5 flex-col justify-between text-slate-800"
       data-display={display}
+      data-color={color}
     >
       <div>
         <div className="text-end">
