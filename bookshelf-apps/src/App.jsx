@@ -197,6 +197,17 @@ function App() {
   }
 
   function handleClearBooks() {
+    if (books.length === 0) {
+      Swal.fire({
+        title: "Oops...",
+        text: "The book list is empty",
+        icon: "error",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
+    }
+
     Swal.fire({
       title: "Are you sure you want to delete all the books?",
       showCancelButton: true,
