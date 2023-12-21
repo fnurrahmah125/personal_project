@@ -36,6 +36,14 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
     onHandleOverlay();
   }
 
+  function handleCancel() {
+    setTitle("");
+    setText("");
+    setMaxChar(50);
+
+    onHandleOverlay();
+  }
+
   function handleTitle(e) {
     const inputValue = e.target.value;
     const countLimit = 50;
@@ -105,7 +113,7 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
               <button
                 type="button"
                 className="bg-rose-600 text-white text-sm py-2 px-4 rounded-md hover:bg-rose-700"
-                onClick={onHandleOverlay}
+                onClick={handleCancel}
               >
                 Cancel
               </button>

@@ -99,6 +99,7 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
               maxLength={50}
               value={values.title}
               onChange={(e) => handleTitle(e)}
+              required
               className="block bg-slate-50 w-full px-4 py-2 rounded-md mb-4 placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             />
             <textarea
@@ -107,6 +108,7 @@ function FormEdit({ onHandleOverlay, isEditing, selectedNote, onUpdateNote }) {
               placeholder="Enter your text here..."
               value={values.text}
               onChange={(e) => handleText(e)}
+              required
               className="block bg-slate-50 w-full px-4 py-3 mb-6 rounded-md placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
             ></textarea>
             <div className="mb-4 py-2 font-regular text-slate-700 dark:text-white">
