@@ -53,6 +53,8 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
     if (inputValue.length <= countLimit) {
       setMaxChar(countLimit - inputValue.length);
     }
+
+    if (inputValue.length > 50) setTitle(inputValue.slice(0, 50));
   }
 
   function handleText(e) {
@@ -79,7 +81,6 @@ function FormAdd({ isOpen, onHandleOverlay, onAddNote }) {
               type="text"
               placeholder="Enter title..."
               value={title}
-              maxLength={50}
               onChange={(e) => handleTitle(e)}
               required
               className="block bg-slate-50 w-full px-4 py-2 rounded-md mb-4 placeholder:font-light placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-500 dark:bg-slate-800/90 dark:text-slate-200 dark:placeholder:text-slate-500"
