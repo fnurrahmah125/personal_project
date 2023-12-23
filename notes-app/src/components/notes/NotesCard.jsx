@@ -32,12 +32,12 @@ function NotesCard({
         <div className="note-title text-2xl mb-2 font-medium overflow-hidden break-words">
           {title}
         </div>
-        <div className="font-light h-[174px] text-sm tracking-wide leading-relaxed overflow-y-scroll whitespace-pre-wrap break-words">
+        <div className="font-light h-[174px] text-base tracking-wide leading-relaxed overflow-y-scroll whitespace-pre-wrap break-words">
           {text}
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <div className="text-sm font-reguler">{createdAt}</div>
+        <div className="text-base font-reguler">{createdAt}</div>
         <div>
           <NotesDeleteBtn id={id} onDeleteNote={onDeleteNote} />
           <NotesEditBtn id={id} onEditNote={onEditNote} />
