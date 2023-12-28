@@ -52,8 +52,7 @@
 
       span {
         font-size: rem(14);
-        background: $color-white;
-        opacity: 0.7;
+        background: rgba($color: $color-white, $alpha: 0.7);
         color: $color-primary;
         margin-right: 0.5rem;
         padding: 0.25rem 1rem;

@@ -38,10 +38,19 @@ $bpDesktopLarge: 1200px;
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 225px;
+
+  @media (min-width: $bpTablet) {
+    scroll-padding-top: 50px;
+  }
+}
+
 body {
   font-family: $font-primary;
   color: $color-white;
   background: $color-primary;
+  position: relative;
 
   main {
     min-height: calc(100vh - 130px);

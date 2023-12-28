@@ -1,15 +1,15 @@
 import $ from 'jquery';
 
 $(() => {
-  $('.header-toggle').click(function () {
-    $('.nav').toggleClass('nav--open', 500);
-    $(this).toggleClass('open');
-    $('footer').toggleClass('menu-open');
+  $('.nav-hamburger').click(function () {
+    $('.nav-list').toggleClass('nav--open', 500);
+    $('.fa-bars').toggleClass('fa-xmark');
   });
 
   $(window).on('resize', function () {
     if ($(window).width() >= 768) {
-      $('footer').removeClass('menu-open');
+      $('.nav-list').removeClass('nav--open');
+      $('.fa-bars').removeClass('fa-xmark');
     }
   });
 });

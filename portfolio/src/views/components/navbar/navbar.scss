@@ -1,10 +1,44 @@
 .nav {
+  button.nav-hamburger {
+    font-size: rem(28);
+    color: $color-white;
+    background: none;
+    border: none;
+
+    @media (min-width: $bpTablet) {
+      display: none;
+    }
+  }
+
   &-list {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: -250px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid $color-grey-2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: $color-primary;
+    transition: top ease-in-out 450ms;
+
+    @media (min-width: $bpTablet) {
+      position: static;
+      flex-direction: row;
+      box-shadow: none;
+      padding: 0px;
+      border: none;
+    }
+
+    &.nav--open {
+      top: 72px;
+    }
   }
 
   &-link {
