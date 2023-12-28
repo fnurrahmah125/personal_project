@@ -19,6 +19,11 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
       <NotesTitle />
       <NotesSection title="Favorites" data={favoritesNotes}>
         <NotesWrapper>
+          {favoritesNotes.length === 0 ? (
+            <div className="h-32 w-full"></div>
+          ) : (
+            <></>
+          )}
           {[...favoritesNotes].reverse().map((note) => (
             <NotesCard
               key={note.id}
@@ -38,6 +43,11 @@ function Notes({ notes, onDeleteNote, onFavoriteNote, onEditNote }) {
       </NotesSection>
       <NotesSection title="Others" data={othersNotes}>
         <NotesWrapper>
+          {othersNotes.length === 0 ? (
+            <div className="h-32 w-full"></div>
+          ) : (
+            <></>
+          )}
           {[...othersNotes].reverse().map((note) => (
             <NotesCard
               key={note.id}
