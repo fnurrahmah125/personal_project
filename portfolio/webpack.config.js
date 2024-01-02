@@ -29,8 +29,8 @@ module.exports = (env, argv) => {
         Views: path.join(__dirname, 'src/views/'),
         Images: path.join(__dirname, 'src/assets/images/'),
         Fonts: path.join(__dirname, 'src/assets/fonts/'),
-        Styles: path.join(__dirname, 'src/assets/styles/'),
-        Scripts: path.join(__dirname, 'src/assets/scripts/'),
+        Styles: path.join(__dirname, 'src/styles/'),
+        Scripts: path.join(__dirname, 'src/scripts/'),
       },
       // resolve omitted extensions
       extensions: ['.js', '.ts'],
@@ -52,6 +52,7 @@ module.exports = (env, argv) => {
 
       // Define Pug files directly in entry:
       index: 'src/views/pages/home/index.pug',
+      bookmarks: 'src/views/pages/bookmarks/index.pug',
     },
 
     plugins: [

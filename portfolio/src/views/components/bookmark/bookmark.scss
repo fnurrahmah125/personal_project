@@ -1,0 +1,99 @@
+.bookmark {
+  width: 100%;
+  padding-top: 4rem;
+
+  &-container {
+    padding: 1rem;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+
+    @media (min-width: $bpDesktop) {
+      max-width: 50rem;
+    }
+
+    @media (min-width: $bpDesktopLarge) {
+      max-width: 53rem;
+    }
+  }
+
+  &-title {
+    font-size: rem(36);
+    padding-block: 1rem;
+  }
+
+  &-buttons {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+
+  &-btn {
+    display: inline-block;
+    font-size: rem(14);
+    user-select: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    background: $color-primary;
+    color: $color-white;
+    border: 1px solid $color-grey-3;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &.active {
+      background: $color-grey-3;
+      color: $color-secondary;
+    }
+  }
+
+  a.bookmark-card {
+    display: block;
+    text-decoration: none;
+    padding-block: 1.25rem;
+    padding-inline: 1rem;
+    background: rgba($color: $color-white, $alpha: 0.05);
+    transition: background ease-in-out 250ms;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+    @media (min-width: $bpTablet) {
+      padding-inline: 1.25rem;
+    }
+
+    &:hover {
+      background: rgba($color: $color-white, $alpha: 0.085);
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    .card-title {
+      font-size: rem(20);
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      color: $color-white;
+    }
+
+    .card-desc {
+      font-size: rem(14);
+      font-weight: $thin;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+      color: $color-grey-1;
+    }
+
+    .card-file {
+      font-size: rem(12);
+      text-transform: uppercase;
+      color: $color-grey-1;
+    }
+  }
+}

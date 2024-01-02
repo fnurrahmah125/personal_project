@@ -1,0 +1,23 @@
+include bookmarkCard.pug
+
+- var data = require('Scripts/data.json')
+- var types = ["All", "HTML", "CSS", "JavaScript", "API", "React", "Git", "Libraries", "Portfolio", "Others"]
+
+.bookmark#bookmark
+    .bookmark-container
+        h2.bookmark-title Bookmarks
+        .bookmark-buttons
+            each val in types
+                if val === "All"
+                    button.bookmark-btn.active(data-type=val.toLowerCase())= val
+                else
+                    button.bookmark-btn(data-type=val.toLowerCase())= val
+        .bookmark-cards 
+            each item in data
+                +bookmarkCard({
+                    "link": item.link,
+                    "title": item.title,
+                    "desc": item.desc,
+                    "type": item.type,
+                    "file": item.file
+                })

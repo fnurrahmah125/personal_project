@@ -1,0 +1,62 @@
+@use 'sass:math';
+
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+$font-primary: 'Poppins', sans-serif;
+
+// colors
+$color-white: #ffffff;
+$color-primary: #121212;
+$color-secondary: #03dac5;
+$color-grey-1: #777777;
+$color-grey-2: #616161;
+$color-grey-3: #616161b0;
+
+// font weight
+$light: 200;
+$thin: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+
+// breakpoints
+$bpMobile: 576px;
+$bpTablet: 768px;
+$bpDesktop: 992px;
+$bpDesktopLarge: 1200px;
+
+// functions
+@function rem($value) {
+  $remValue: math.div($value, 16) * 1rem;
+  @return $remValue;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 225px;
+
+  @media (min-width: $bpTablet) {
+    scroll-padding-top: 50px;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-white;
+  background: $color-primary;
+  position: relative;
+
+  main {
+    min-height: calc(100vh - 130px);
+  }
+
+  @import 'Views/components/header/header.scss';
+  @import 'Views/components/navbar/navbar.scss';
+  @import 'Views/components/footer/footer.scss';
+}

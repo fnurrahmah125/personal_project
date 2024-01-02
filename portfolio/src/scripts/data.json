@@ -1,0 +1,170 @@
+[
+  {
+    "link": "https://dev.to/ruppysuppy/7-free-public-apis-you-will-love-as-a-developer-166p",
+    "title": "7 Free Public APIs you will love as a developer",
+    "desc": "1. JSON Placeholder · 2. Google Translate · 3. Open Weather Map · 4. REST Countries · 5. IP API · 6. Random Data API · 7. The Pokemon API.",
+    "type": "api",
+    "file": "article"
+  },
+  {
+    "link": "https://api-ninjas.com/",
+    "title": "API Ninjas | Build Real Applications with Real Data",
+    "desc": "Build Real Projects with Real Data · Harness the power of 78 data APIs for your next big idea · Build amazing products · Impress clients · Unlock your dream ...",
+    "type": "api",
+    "file": "article"
+  },
+  {
+    "link": "https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/",
+    "title": "How to Use localStorage with React Hooks to Set and Get Items",
+    "desc": "localStorage is a web storage object that allows JavaScript sites and apps to keep key-value pairs in a web browser with no expiration date.",
+    "type": "react",
+    "file": "article"
+  },
+  {
+    "link": "https://loremipsum.io/21-of-the-best-placeholder-image-generators/",
+    "title": "21 of the Best Placeholder Image Generators",
+    "desc": "This placeholder image generator offers a lot of options, including width and height, ratios, background and foreground color, and our favorite—common preset ...",
+    "type": "html",
+    "file": "article"
+  },
+  {
+    "link": "https://css-tricks.com/centering-css-complete-guide/",
+    "title": "Centering in CSS: A Complete Guide",
+    "desc": "Centering things in CSS is the poster child of CSS complaining. Why does it have to be so hard? ",
+    "type": "css",
+    "file": "article"
+  },
+  {
+    "link": "https://vegastack.com/tutorials/how-to-configure-git-username-and-email-address/",
+    "title": "How to Configure Git Username and Email Address",
+    "desc": "Configure Git Username and Email Address with our tutorial. Git is a popular version control system for software development.",
+    "type": "git",
+    "file": "article"
+  },
+  {
+    "link": "https://www.robinwieruch.de/local-storage-react/",
+    "title": "Local Storage in React",
+    "desc": "In this React tutorial, you will learn how to store state in local storage by using a custom React Hook. We will address the session storage shortly as well, but essentially it is used the same way as the local storage in React.",
+    "type": "react",
+    "file": "article"
+  },
+  {
+    "link": "https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/",
+    "title": "How to Consume REST APIs in React – a Beginner's Guide",
+    "desc": "React is a popular frontend library that developers use to create applications. And you will need to integrate APIs into your React application at some point if you want to build production-ready apps.",
+    "type": "react",
+    "file": "article"
+  },
+  {
+    "link": "https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/",
+    "title": "How to Search and Filter Components in React",
+    "desc": "If you're building a React app, you want your users to be able to search and get exact results. And if you are getting tons of items from an API, then you need to create a way for users to be able to find various items easily.",
+    "type": "react",
+    "file": "article"
+  },
+  {
+    "link": "https://www.freecodecamp.org/news/vim-beginners-guide/",
+    "title": "How to Use Vim – Tutorial for Beginners",
+    "desc": "Vim is one of the most popular text editors among Linux users. Linux System Administrators especially often prefer it to other editors.",
+    "type": "others",
+    "file": "article"
+  },
+  {
+    "link": "https://www.youtube.com/watch?v=kTb2jNB_C7k",
+    "title": "How to install nvm on macOS Ventura",
+    "desc": "How to install nvm/node version manager on your macOS Ventura device",
+    "type": "others",
+    "file": "video"
+  },
+  {
+    "link": "https://chipcullen.com/how-to-use-icomoon-and-icon-fonts-part-1-basic-usage/",
+    "title": "How to use IcoMoon and Icon Fonts - Part 1: Basic Usage",
+    "desc": "It is an online service that lets you generate a custom-built icon font, using icons that are either open licensed or for-pay. I've used IcoMoon ...",
+    "type": "others",
+    "file": "article"
+  },
+  {
+    "link": "https://www.binaracademy.com/blog/penjelasan-rest-api",
+    "title": "API & REST API: Penjelasan Lengkap, Contoh, Cara Kerja API",
+    "desc": "Tahukah kamu, tidak semua fitur yang ada dalam aplikasi, di-develop oleh tim engineer. Mereka bisa menggunakan fitur dari aplikasi yang sudah ada dan berfokus untuk mengembangkan fitur yang lebih unik.",
+    "type": "api",
+    "file": "article"
+  },
+  {
+    "link": "https://www.javascripttutorial.net/javascript-anonymous-functions/",
+    "title": "JavaScript Anonymous Functions",
+    "desc": "in this tutorial, you will learn about JavaScript anonymous functions which are functions without names",
+    "type": "javascript",
+    "file": "article"
+  },
+  {
+    "link": "https://insight.wellcode.io/guard-clauses-jurus-jitu-menghindari-penggunaan-nested-if-yang-berlebihan",
+    "title": "Guard Clauses, Jurus jitu menghindari penggunaan nested if yang berlebihan",
+    "desc": "Seorang programmer terkadang hanya fokus menulis sebuah kode yang dapat menyelesaikan sebuah masalah, tapi semakin banyak kode yang ditulis seperti itu maka akan semakin rumit kode yang di hasilkan ...",
+    "type": "javascript",
+    "file": "article"
+  },
+  {
+    "link": "https://codemyui.com/sidebar-menu-scroll-progress-indicator/",
+    "title": "Sidebar Menu Scroll Progress Indicator",
+    "desc": "You have a navigation menu on the left sidebar and as you scroll there is a progress indicator that moves along the menu to indication which section of the page is active",
+    "type": "javascript",
+    "file": "article"
+  },
+  {
+    "link": "https://www.quora.com/How-do-you-fix-a-USB-drive-after-Linux-has-been-installed-on-it",
+    "title": "How do you fix a USB drive after Linux has been installed on it?",
+    "desc": "Hello, To Fix USB Drive 1. Boot into Windows 2. Plug USB 3. Open Powershell as admin TYPE THE FOLLOWING COMMAND 1. diskpart 2. list disk ...",
+    "type": "others",
+    "file": "article"
+  },
+  {
+    "link": "https://www.jurnalanas.com/",
+    "title": "Anas Muhammad Nasrurrohman",
+    "desc": "Hi, I'm Anas. I'm a software developer based in Jakarta, Indonesia. I enjoy using Typescript, React, and Node to build tech products.",
+    "type": "portfolio",
+    "file": "website"
+  },
+  {
+    "link": "https://www.dwinawan.com/",
+    "title": "Dwinawan",
+    "desc": "Seorang User Interface Designer, saat ini tinggal di kota Surakarta yang banyak sekali makanan enak. Suka melakukan eksplorasi design yang minimalis dan memiliki fungsionalitas yang baik.",
+    "type": "portfolio",
+    "file": "website"
+  },
+  {
+    "link": "https://gsap.com/",
+    "title": "GSAP",
+    "desc": "GSAP is an industry standard JavaScript animation library from GreenSock that lets you craft high-performance animations that work in every major browser.",
+    "type": "libraries",
+    "file": "website"
+  },
+  {
+    "link": "https://airbnb.io/lottie/#/",
+    "title": "Lottie",
+    "desc": "Lottie is a library for Android, iOS, Web, and Windows that parses Adobe After Effects animations exported as JSON with Bodymovin and renders them natively on mobile and on the web!",
+    "type": "libraries",
+    "file": "website"
+  },
+  {
+    "link": "https://recharts.org/en-US",
+    "title": "Recharts",
+    "desc": "A composable charting library built on React components",
+    "type": "libraries",
+    "file": "website"
+  },
+  {
+    "link": "https://form.io/",
+    "title": "Form.io",
+    "desc": "Form.io gives you the power to build twice as fast because it's effortless for anyone to drag and drop forms and APIs.",
+    "type": "libraries",
+    "file": "website"
+  },
+  {
+    "link": "https://sweetalert2.github.io/",
+    "title": "SweetAlert2",
+    "desc": "A BEAUTIFUL, RESPONSIVE, CUSTOMIZABLE, ACCESSIBLE (WAI-ARIA) REPLACEMENT FOR JAVASCRIPT'S POPUP BOXES",
+    "type": "libraries",
+    "file": "website"
+  }
+]

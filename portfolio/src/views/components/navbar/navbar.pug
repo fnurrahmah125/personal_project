@@ -1,10 +1,16 @@
-nav.nav
-    button.nav-hamburger
-        i(class="fa-solid fa-bars")
-    ul.nav-list
-        li.nav-list-item
-            a.nav-link(href="#about") About
-        li.nav-list-item
-            a.nav-link(href="#project") Projects
-        li.nav-list-item
-            a.nav-link(href="#") Bookmarks
+mixin navbar(spec)
+    - spec = spec || {}
+    - spec.about = spec.about || ""
+    - spec.projects = spec.projects || ""
+    - spec.bookmarks = spec.bookmarks || ""
+
+    nav.nav
+        button.nav-hamburger
+            i(class="fa-solid fa-bars")
+        ul.nav-list
+            li.nav-list-item
+                a.nav-link(href=spec.about) About
+            li.nav-list-item
+                a.nav-link(href=spec.projects) Projects
+            li.nav-list-item
+                a.nav-link(href=spec.bookmarks) Bookmarks

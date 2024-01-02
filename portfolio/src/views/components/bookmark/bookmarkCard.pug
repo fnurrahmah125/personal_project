@@ -1,0 +1,12 @@
+mixin bookmarkCard(spec)
+    - spec = spec || {}
+    - spec.link = spec.link || ""
+    - spec.title = spec.title || ""
+    - spec.desc = spec.desc || ""
+    - spec.type = spec.type || ""
+    - spec.file = spec.file || ""
+
+    a.bookmark-card(href=spec.link class=spec.type) 
+        .card-title= spec.title
+        .card-desc= spec.desc
+        .card-file= spec.file
