@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../configs/firebase-config";
+import { GoEyeClosed, GoEye } from "react-icons/go";
 import FormWrapper from "../components/FormWrapper";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -39,21 +42,33 @@ const Login = () => {
           required
         />
 
-        <label
-          htmlFor="password"
-          className="mb-2 inline-block w-full font-bold"
-        >
-          Password
-        </label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Password"
-          className="mb-4 inline-block w-full rounded-md border border-slate-300 px-4 py-2 placeholder:font-light"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <div className="relative inline-block w-full">
+          <label
+            htmlFor="password"
+            className="mb-2 inline-block w-full font-bold"
+          >
+            Password
+          </label>
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            id="password"
+            placeholder="Password"
+            className=" mb-4 inline-block w-full rounded-md border border-slate-300 px-4 py-2 placeholder:font-light"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <span
+            className="cursor-pointer"
+            onClick={() => setShowPassword((showPassword) => !showPassword)}
+          >
+            {showPassword ? (
+              <GoEye className="absolute right-[10px] top-[38px] text-lg" />
+            ) : (
+              <GoEyeClosed className="absolute right-[10px] top-[38px] text-lg" />
+            )}
+          </span>
+        </div>
 
         <p className="text-right">
           <Link to="/reset-password" className="text-blue-600">
