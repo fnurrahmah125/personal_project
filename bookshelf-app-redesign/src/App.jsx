@@ -25,6 +25,7 @@ function App() {
         const payload = {
           uid: user.uid,
           authToken: user.refreshToken,
+          email: user.email,
           displayName: user.displayName,
         };
         dispatch(saveUser(payload));
