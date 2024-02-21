@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [validation, setValidation] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,6 +22,12 @@ const Login = () => {
     } catch (error) {
       const errororCode = error.code;
       const errorMessage = error.message;
+
+      if (errororCode == "auth/invalid-credential") {
+        setValidation("The username or password you entered is incorrect");
+        return;
+      }
+
       console.log("Error occured: ", errororCode, errorMessage);
     }
   };
@@ -54,6 +61,7 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="Password"
+            minLength="6"
             className=" mb-4 inline-block w-full rounded-md border border-slate-300 px-4 py-2 placeholder:font-light"
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -75,6 +83,8 @@ const Login = () => {
             Forgot password?
           </Link>
         </p>
+
+        {validation && <p className="mt-4 text-red-600">{validation}</p>}
 
         <button
           type="submit"

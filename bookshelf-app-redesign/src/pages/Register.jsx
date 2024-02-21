@@ -12,6 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [validation, setValidation] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -26,6 +27,12 @@ const Register = () => {
       .catch((error) => {
         const errororCode = error.code;
         const errorMessage = error.message;
+
+        if (errororCode == "auth/email-already-in-use") {
+          setValidation("The email address is already in use");
+          return;
+        }
+
         console.log("Error occured: ", errororCode, errorMessage);
       });
   };
@@ -75,6 +82,7 @@ const Register = () => {
             name="password"
             id="password"
             placeholder="Password"
+            minLength="6"
             className="mb-4 inline-block w-full rounded-md border border-slate-300 px-4 py-2 placeholder:font-light"
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -90,6 +98,8 @@ const Register = () => {
             )}
           </span>
         </div>
+
+        {validation && <p className="mb-4 text-red-600">{validation}</p>}
 
         <button
           type="submit"
