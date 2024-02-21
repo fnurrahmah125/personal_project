@@ -166,7 +166,7 @@ const Home = () => {
                   <div
                     key={index}
                     data-display={book.display}
-                    className="card relative mb-6 gap-3 rounded-lg bg-slate-50 px-4 py-4 drop-shadow-sm lg:grid-cols-12 lg:items-center lg:gap-5 lg:px-6 "
+                    className="card relative mb-6 gap-3 rounded-lg bg-slate-50 px-4 py-4 drop-shadow-sm data-[display=visible]:grid data-[display=hidden]:hidden lg:grid-cols-12 lg:items-center lg:gap-5 lg:px-6"
                   >
                     <div className="my-2 flex flex-wrap items-center gap-4 lg:col-span-4 lg:my-0 lg:grid lg:grid-cols-5 lg:gap-x-4 xl:grid-cols-7">
                       <div className="card-title-custom h-10 w-10 rounded-full text-center text-2xl font-semibold leading-10">
@@ -232,8 +232,12 @@ const Home = () => {
                       <button
                         type="button"
                         onClick={() => navigate(`/edit/${book.id}`)}
+                        className="group relative"
                       >
                         <GoPencil className="mr-4 inline-block text-xl text-slate-700 lg:text-lg" />
+                        <span className="invisible absolute right-[0] top-[35px] rounded-md bg-slate-800 px-4 py-1 text-center text-sm text-white after:absolute after:-top-[15px] after:right-[20px] after:rotate-180 after:border-8 after:border-transparent after:border-t-slate-800 after:content-[''] group-hover:visible">
+                          Edit
+                        </span>
                       </button>
 
                       <button
@@ -241,8 +245,12 @@ const Home = () => {
                         onClick={() => {
                           dispatch(deleteBookFromFireStore(book.id));
                         }}
+                        className="group relative"
                       >
                         <GoTrash className="inline-block text-xl text-red-500 lg:text-lg" />
+                        <span className="invisible absolute -right-[29px] top-[35px] rounded-md bg-slate-800 px-4 py-1.5 text-center text-sm text-white after:absolute after:-top-[15px] after:right-[29px] after:rotate-180 after:border-8 after:border-transparent after:border-t-slate-800 after:content-[''] group-hover:visible">
+                          Delete
+                        </span>
                       </button>
                     </div>
                   </div>
