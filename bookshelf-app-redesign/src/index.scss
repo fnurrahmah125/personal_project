@@ -34,12 +34,4 @@
   .inactive {
     @apply px-4 py-1 text-slate-500 hover:text-slate-800;
   }
-
-  div[data-display="visible"] {
-    @apply grid;
-  }
-
-  div[data-display="hidden"] {
-    @apply hidden;
-  }
 }
