@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchBooksFromFirestore } from "../store/slices/bookSlice";
-import { GoClock } from "react-icons/go";
+import { GoBook, GoClock } from "react-icons/go";
 import Navbar from "../components/Navbar";
 
 const Profile = () => {
@@ -10,9 +10,19 @@ const Profile = () => {
   const auth = useSelector((state) => state.auth.value);
   const books = useSelector((state) => state.books.books);
 
+  const [totalPages, setTotalPages] = useState(0);
+
   useEffect(() => {
     dispatch(fetchBooksFromFirestore(auth.uid));
   }, [auth, dispatch]);
+
+  useEffect(() => {
+    const total = books.reduce((acc, object) => {
+      return acc + Number(object["currentPages"]);
+    }, 0);
+
+    setTotalPages(total);
+  }, [books]);
 
   return (
     <>
@@ -28,6 +38,55 @@ const Profile = () => {
             <p className="mb-1 text-2xl font-medium">Hi, {auth.displayName}!</p>
             <p className="font-light text-slate-500">{auth.email}</p>
           </div>
+          <div className="mb-12">
+            <h2 className="mb-4 text-lg font-bold">Readings Stats</h2>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <div className="flex gap-4 rounded-md bg-gradient-to-br from-cyan-500 to-blue-500 p-6">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/35">
+                  <GoBook className="inline-block text-3xl text-white" />
+                </span>
+                <div className="text-white">
+                  <p className="text-2xl font-bold">{totalPages}</p>
+                  <p className="text-sm font-light">Total Pages</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 rounded-md bg-gradient-to-br from-purple-500 to-pink-500 p-6">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/35">
+                  <GoBook className="inline-block text-3xl text-white" />
+                </span>
+                <div className="text-white">
+                  <p className="text-2xl font-bold">{books.length}</p>
+                  <p className="text-sm font-light">Total Books</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 rounded-md bg-gradient-to-br from-yellow-500 to-orange-500 p-6">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/35">
+                  <GoBook className="inline-block text-3xl text-white" />
+                </span>
+                <div className="text-white">
+                  <p className="text-2xl font-bold">
+                    {books.filter((book) => book.isFinished === true).length}
+                  </p>
+                  <p className="text-sm font-light">Finished Reading</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 rounded-md bg-gradient-to-br from-lime-500 to-emerald-500 p-6">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/35">
+                  <GoBook className="inline-block text-3xl text-white" />
+                </span>
+                <div className="text-white">
+                  <p className="text-2xl font-bold">
+                    {books.filter((book) => book.isFinished === false).length}
+                  </p>
+                  <p className="text-sm font-light">Continue Reading</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-12">
             <h2 className="mb-4 text-lg font-bold">Current Readings</h2>
             {books.map((book) => {
