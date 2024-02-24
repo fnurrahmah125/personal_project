@@ -12,7 +12,7 @@
     }
 
     @media (min-width: $bpDesktopLarge) {
-      max-width: 53rem;
+      max-width: 54rem;
     }
   }
 
@@ -44,6 +44,11 @@
     line-height: 1.75;
     letter-spacing: 0.5px;
 
+    @media (min-width: $bpTablet) {
+      font-size: rem(18);
+      line-height: 1.85;
+    }
+
     p {
       color: $color-grey-1;
       margin-bottom: 1rem;
@@ -52,6 +57,12 @@
     span {
       font-weight: $normal;
       color: $color-white;
+    }
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+      font-weight: $normal;
     }
   }
 
@@ -62,6 +73,10 @@
       color: $color-grey-3;
       font-size: rem(22);
       padding-right: 1rem;
+
+      @media (min-width: $bpTablet) {
+        font-size: rem(24);
+      }
     }
 
     a {
@@ -70,9 +85,77 @@
       text-decoration: none;
       transition: color ease-in-out 250ms;
 
+      @media (min-width: $bpTablet) {
+        font-size: rem(16);
+      }
+
       &:hover {
         color: $color-secondary;
       }
+    }
+  }
+
+  &-stack {
+    padding-top: 3rem;
+    margin-top: 3rem;
+    text-align: center;
+    border-top: 1px solid $color-grey-3;
+
+    i {
+      color: $color-grey-1;
+      font-size: rem(24);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: rem(16);
+      margin-bottom: 1.5rem;
+    }
+
+    &-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 5px;
+    }
+
+    &-icon {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid $color-grey-3;
+      background: $color-primary;
+      transition: background ease-in-out 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background: $color-grey-3;
+      }
+
+      &:hover svg,
+      &:hover img {
+        filter: grayscale(0);
+      }
+
+      &:last-child {
+        display: none;
+
+        @media (min-width: $bpTablet) {
+          display: block;
+        }
+      }
+    }
+
+    span {
+      font-size: rem(16);
+      text-transform: capitalize;
+    }
+
+    svg,
+    img {
+      filter: grayscale(100%);
+      transition: filter 0.3s;
     }
   }
 }
