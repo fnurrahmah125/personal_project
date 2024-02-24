@@ -1,20 +1,8 @@
-include Views/components/navbar/navbar.pug
-
-mixin header(spec)
-    - spec = spec || {}
-    - spec.about = spec.about || ""
-    - spec.projects = spec.projects || ""
-    - spec.bookmarks = spec.bookmarks || ""
-
-    header.header
-        .header-container
-            .header-logo
-                a.header-logo--desktop(href="./index.html") Fatrini <span>Nurrahmah</span>
-                a.header-logo--mobile(href="./index.html") 
-                    img(src=require("Images/logo.png") alt="Logo" width="40")
-            
-            +navbar({
-                "about": spec.about,
-                "projects": spec.projects,
-                "bookmarks": spec.bookmarks
-            })
+header.header
+    .header-container
+        .header-logo
+            a.header-logo--desktop(href="./index.html") Fatrini <span>Nurrahmah</span>
+            a.header-logo--mobile(href="./index.html") 
+                img(src=require("Images/logo.png") alt="Logo" width="40")
+        
+        include Views/components/navbar/navbar.pug

@@ -5,15 +5,10 @@ block style
 
 block content
   include Views/components/header/header.pug
-  +header({
-    "about": "#about",
-    "projects": "#project",
-    "bookmarks": "./bookmarks.html"
-  })
 
   main
     include Views/components/about/about.pug
-    include Views/components/project/project.pug
+    //- include Views/components/project/project.pug
 
   include Views/components/footer/footer.pug
     
