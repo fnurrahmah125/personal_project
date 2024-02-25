@@ -52,6 +52,11 @@
     p {
       color: $color-grey-1;
       margin-bottom: 1rem;
+
+      &::selection {
+        color: $color-primary;
+        background: $color-white;
+      }
     }
 
     span {
