@@ -53,6 +53,7 @@ module.exports = (env, argv) => {
       // Define Pug files directly in entry:
       index: 'src/views/pages/home/index.pug',
       bookmarks: 'src/views/pages/bookmarks/index.pug',
+      projects: 'src/views/pages/projects/index.pug',
     },
 
     plugins: [

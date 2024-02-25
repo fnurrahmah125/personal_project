@@ -1,0 +1,12 @@
+extends Views/layouts/base.pug
+
+block style
+  link(rel='stylesheet' href=require('./styles.scss'))
+
+block content
+  include Views/components/header/header.pug
+
+  main
+    include Views/components/project/project.pug
+
+  include Views/components/footer/footer.pug

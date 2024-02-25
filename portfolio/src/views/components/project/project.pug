@@ -1,21 +1,43 @@
-include projectCard.pug
+//- include projectCard.pug
 
 .project#project
     .project-container
         h2.project-title Projects
-        .project-cards
-            +card({
-                "title": "Bookshelf App",
-                "tech": ["React", "SCSS", "Jquery"],
-                "desc": "A simple web app allows users to easily catalog their books by inputting details such as title, author, and year. This app is built with React, and user data is stored in the browser's local storage.",
-                "source": "https://github.com/fnurrahmah125/personal_project/tree/main/bookshelf-apps",
-                "live": "https://fnurrahmah-bookshelf-app.vercel.app/"
-            }) 
-            +card({
-                "title": "Notes App",
-                "tech": ["React", "Tailwind", "Jquery"],
-                "desc": "A simple notes app built with React.js. The user data is stored in the browser's local storage. This web app allows you to create and edit notes.",
-                "source": "https://github.com/fnurrahmah125/personal_project/tree/main/notes-app",
-                "live": "https://fnurrahmah-notes-app.vercel.app/"
-            }) 
-                
+        p.project-text Practice makes perfect. Here are some personal projects I have completed. This is far from perfect, but I will continue to improve it 🙂
+        .project-card-new 
+            h3.project-card-title <span>01</span> Bookshelf App
+            p.project-card-desc A simple web app allows users to easily catalog their books and track their reading history by entering details such as title, author, year, and total pages.
+            .project-image
+                img(src=require("Images/bookshelf-app.jpg"), alt="project image")
+            .project-detail 
+                .project-detail-tech 
+                    .project-detail-title Tech
+                    ul
+                        li React 
+                        li Redux 
+                        li Firebase 
+                        li Tailwind
+                .project-detail-repo 
+                    .project-detail-title Repository 
+                    a(href="https://github.com/fnurrahmah125/bookshelf-app") https://github.com/fnurrahmah125/bookshelf-app
+                .project-detail-demo 
+                    .project-detail-title Live Demo 
+                    a(href="https://bookshelf-app-fn.vercel.app/") https://bookshelf-app-fn.vercel.app/
+        .project-card-new 
+            h3.project-card-title <span>02</span> Slicing Project
+            p.project-card-desc Slicing design is a must-have skill for frontend developers. This website will collect all the designs I have sliced.
+            .project-image
+                img(src=require("Images/slicing.jpg"), alt="project image")
+            .project-detail 
+                .project-detail-tech 
+                    .project-detail-title Tech
+                    ul
+                        li HTML 
+                        li CSS 
+                        li JavaScript 
+                .project-detail-repo 
+                    .project-detail-title Repository 
+                    a(href="https://github.com/fnurrahmah125/learn_slicing") https://github.com/fnurrahmah125/learn_slicing
+                .project-detail-demo 
+                    .project-detail-title Live Demo 
+                    a(href="https://learn-slicing-fn.vercel.app/") https://learn-slicing-fn.vercel.app/
