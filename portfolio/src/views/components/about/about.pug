@@ -1,4 +1,6 @@
-- var names = ["atlassian", "bitbucket", "bootstrap5", "css3", "figma", "firebase", "git", "github", "html5", "jira", "jquery", "js", "json", "npm2", "prettier", "pugjs", "reactjs", "redux", "sass", "tailwindcss", "vitejs", "vscode", "webpack"]
+- var icons = ["atlassian", "bitbucket", "bootstrap5", "css3", "figma", "firebase", "git", "github", "html5", "jira", "jquery", "js", "json", "npm2", "prettier", "pugjs", "reactjs", "redux", "sass", "tailwindcss", "vitejs", "vscode", "webpack"]
+
+- var names = ["Atlassian", "Bitbucket", "Bootstrap 5", "CSS 3", "Figma", "Firebase", "Git", "GitHub", "HTML 5", "Jira", "jQuery", "JavaScript", "Json", "npm", "Prettier", "Pug.js", "React.js", "Redux", "Sass", "Tailwind CSS", "Vite", "VS Code", "Webpack"]
 
 .about#about
     .about-container
@@ -19,8 +21,8 @@
                 i(class="fa-solid fa-code")
                 p Tech stacks and tools I have experience with
                 .about-stack-icons
-                    each name in names
+                    each icon, index in icons
                         .about-stack-icon
-                            img(src=require(`Images/${name}.svg`) alt=name width="40" height="100")
-                            span= name
+                            img(src=require(`Images/${icon}.svg`) alt=names[index] width="40" height="100")
+                            span= names[index]
                     .about-stack-icon
