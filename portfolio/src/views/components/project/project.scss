@@ -195,6 +195,10 @@
         }
       }
 
+      p {
+        color: $color-grey-1;
+      }
+
       &-tech {
         grid-area: tech;
       }
