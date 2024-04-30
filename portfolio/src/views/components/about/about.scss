@@ -100,66 +100,22 @@
     }
   }
 
-  &-stack {
-    padding-top: 3rem;
-    margin-top: 3rem;
-    text-align: center;
-    border-top: 1px solid $color-grey-3;
+  &-resume {
+    margin-top: 1.5rem;
 
-    i {
-      color: $color-grey-1;
-      font-size: rem(24);
-      margin-bottom: 0.5rem;
-    }
-
-    p {
+    button {
       font-size: rem(16);
-      margin-bottom: 1.5rem;
-    }
-
-    &-icons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 5px;
-    }
-
-    &-icon {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 1px solid $color-grey-3;
-      background: $color-primary;
-      transition: background ease-in-out 0.3s;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      background-color: $color-primary;
+      color: $color-white;
+      border: 1px solid $color-secondary;
+      transition: color 0.3s;
       cursor: pointer;
 
       &:hover {
-        background: $color-grey-3;
+        color: $color-secondary;
       }
-
-      &:hover svg,
-      &:hover img {
-        filter: grayscale(0);
-      }
-
-      &:last-child {
-        display: none;
-
-        @media (min-width: $bpTablet) {
-          display: block;
-        }
-      }
-    }
-
-    span {
-      font-size: rem(16);
-    }
-
-    svg,
-    img {
-      filter: grayscale(100%);
-      transition: filter 0.3s;
     }
   }
 }
